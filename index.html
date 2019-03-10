@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>RAID rebuild failure chance calculator.</title>
+    <title>RAID重建失败概率计算器</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -30,12 +30,13 @@
         <div class="cover-container">
 
           <div class="inner cover">
-            <h1 class="cover-heading">RAID rebuild failure chance calculator.</h1>
-            <p>This calculator determines the chance of a RAID rebuild failing due to an unrecoverable read error. The calculator makes a <a style="font-weight: bold" href="http://www.raidtips.com/raid5-ure.aspx">number of assumptions.</a></p>
-            <p>Other types of drive errors and failures are not considered as part of this calculator.</p>
+            <h1 class="cover-heading">RAID重建失败概率计算器</h1>
+            <p>该计算器用来计算由于不可恢复的错误导致RAID重建失败的概率. 其他硬盘故障或错误不包含在内.</p>
+            <p>计算假设基于: <a style="font-weight: bold" href="http://www.raidtips.com/raid5-ure.aspx">raid5-ure</a></p>
+            <p>或请搜索关键词 RAID URE .</p>
             <form id="failchanceform" class="form-horizontal" role="form">
   <div class="form-group">
-    <label for="raidtype" class="col-sm-3 control-label">Type</label>
+    <label for="raidtype" class="col-sm-3 control-label">RAID 类型</label>
     <div class="col-sm-9">
       <select id="raidtype" class="form-control">
         <option>RAID 5</option>
@@ -44,10 +45,15 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="drivesize" class="col-sm-3 control-label">Drive Size (GB)</label>
+    <label for="drivesize" class="col-sm-3 control-label">硬盘大小</label>
     <div class="col-sm-9">
       <select id="drivesize" class="form-control">
+        <option value="72">72 GB</option>
+        <option value="146">146 GB</option>
+        <option value="300">300 GB</option>
+        <option value="450">450 GB</option>
         <option value="500">500 GB</option>
+        <option value="600">600 GB</option>
         <option value="750">750 GB</option>
         <option value="1000">1 TB</option>
         <option value="1500">1.5 TB</option>
@@ -63,7 +69,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="drivecount" class="col-sm-3 control-label">Number of Drives</label>
+    <label for="drivecount" class="col-sm-3 control-label">硬盘数量</label>
     <div class="col-sm-9">
       <select id="drivecount" class="form-control">
         <option>3</option>
@@ -83,11 +89,14 @@
         <option>18</option>
         <option>19</option>
         <option>20</option>
+        <option>32</option>
+        <option>64</option>
+        <option>128</option>
       </select>
     </div>
   </div>
     <div class="form-group">
-    <label for="ureaverage" class="col-sm-3 control-label">Unrecoverable read error rate</label>
+    <label for="ureaverage" class="col-sm-3 control-label">不可恢复读取错误率 ( Nonrecoverable Read Errors Rate )</label>
     <div class="col-sm-9">
       <select id="ureaverage" class="form-control">
         <option value="9">10 ^ 9</option>
@@ -95,22 +104,23 @@
         <option value="11">10 ^ 11</option>
         <option value="12">10 ^ 12</option>
         <option value="13">10 ^ 13</option>
-        <option value="14" selected>10 ^ 14</option>
-        <option value="15">10 ^ 15</option>
-        <option value="16">10 ^ 16</option>
-        <option value="17">10 ^ 17</option>
+        <option value="14" selected>10 ^ 14 (消费级磁盘)</option>
+        <option value="15">10 ^ 15 (企业级磁盘 或 消费级固态硬盘)</option>
+        <option value="16">10 ^ 16 (企业级磁盘 或 消费级固态硬盘)</option>
+        <option value="17">10 ^ 17 (企业级固态硬盘)</option>
       </select>
     </div>
   </div>
 </form>
-          <p class="lead">Errorless rebuild success chance:</p>
+          <p class="lead">重建成功概率:</p>
           <p id="resultspan"></p>
           </div>
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Project maintained by <a href="https://github.com/magJ">magJ</a></p>
-              <p>For any suggestions or corrections <a href="https://github.com/magJ/raid-failure">View the Project on GitHub <small>magJ/raid-failure</small></a></p>
+              <p>Project Translate by <a href="https://github.com/karminski">karminski</a> and original author is <a href="https://github.com/magJ">magJ</a>. View this project on <a href="https://github.com/karminski/raid-failure">GitHub </a></p>
+              <p></p>
+              <p>Background photo by <a href="https://unsplash.com/@0asa">vincent-botta</a> from <a href="https://unsplash.com/photos/wYD_wfifJVs">unsplash.com</a></p>
             </div>
           </div>
 

@@ -1,9 +1,26 @@
-raid-failure
-============
+README.md
+----------------
+- @version    190309:1
+- @author     karminski <code.karminski@outlook.com>
 
-http://magj.github.io/raid-failure/
 
-RAID failure chance calculator.
+Name
+----
+
+    raid-failure - RAID failure chance calculator.
+
+    
+Table of Contents
+-----------------
+
+* [Name](#name)
+* [Desc](#desc)
+
+
+Desc
+----
+
 This is a basic web based calculator to determine the chance of a URE failure during a RAID 5 or RAID 6 rebuild.
 
-If you would like to request a feature, raise an issue or submit a pull request.
+The original repo is [raid-failure](https://github.com/magJ/raid-failure).
+

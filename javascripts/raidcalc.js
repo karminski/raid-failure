@@ -7,9 +7,11 @@ function processRaidForm(){
 	var count = $('#drivecount option:selected').text();
 	var ure   = $('#ureaverage option:selected').val();
 	var chance = calculateRaidFailureChance(type, count, size, ure);
+	chance = chance * 100;
+	console.log(chance);
 
 
-	$("#resultspan").text(chance.toFixed(2).substring(2) + "%");
+	$("#resultspan").text(chance.toFixed(8).substring(0,8) + "%");
 }
 
 function calculateRaidFailureChance(type, diskCount, disksizeGB, ure){
