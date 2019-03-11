@@ -6,12 +6,26 @@ function processRaidForm(){
 	var size  = $('#drivesize option:selected').val();
 	var count = $('#drivecount option:selected').text();
 	var ure   = $('#ureaverage option:selected').val();
+	var inputError = checkInput(type, count);
+	if(inputError !== true){
+		$("#resultspan").text(inputError);
+		return false;
+	}
 	var chance = calculateRaidFailureChance(type, count, size, ure);
 	chance = chance * 100;
 	console.log(chance);
 
 
 	$("#resultspan").text(chance.toFixed(8).substring(0,8) + "%");
+}
+
+function checkInput(type, diskCount){
+	if(type == "RAID 6"){
+		if(diskCount<4){
+			return "RAID 6 至少需要 4 块硬盘.";
+		}
+	}
+	return true;
 }
 
 function calculateRaidFailureChance(type, diskCount, disksizeGB, ure){
@@ -33,6 +47,7 @@ function calculateRaid6FailureChance(diskCount, disksizeGB, successChance){
 	var chance2 = 1 - calculateRaid5FailureChance(diskCount - 1, disksizeGB, successChance);
 	return 1 - (chance1 * chance2);
 }
+
 
 function gigabytesToBits(gigs){
 	return gigs * 1000 * 1000 * 1000 * 8;
