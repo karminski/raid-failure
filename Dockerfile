@@ -31,9 +31,9 @@ COPY ./ /data/repo/raid-failure/
 
 
 # define health check
-HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://127.0.0.1:80/status?src=docker_health_check -H"Host:raid-failure.eth6.org" || exit 1
+HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://127.0.0.1:10080/status?src=docker_health_check -H"Host:raid-failure.eth6.org" || exit 1
 
 # run nginx
-EXPOSE 80
+EXPOSE 10080
 STOPSIGNAL SIGTERM
 ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
