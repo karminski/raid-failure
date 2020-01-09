@@ -1,5 +1,5 @@
 README.md
-----------------
+---------
 - @version    190309:1
 - @author     karminski <code.karminski@outlook.com>
 

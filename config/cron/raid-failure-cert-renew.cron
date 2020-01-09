@@ -1,0 +1,5 @@
+# raid-failure-cert-renew.cron
+# @version:    200109:1
+#
+0 0 1 * * /usr/bin/certbot renew --force-renewal
+5 0 1 * * /usr/bin/nginx -s reload
