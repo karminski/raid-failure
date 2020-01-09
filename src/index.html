@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,35 +20,34 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
 
     <div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
+        <div class="site-wrapper-inner">
 
-        <div class="cover-container">
+            <div class="cover-container">
 
-          <div class="inner cover">
-            <h1 class="cover-heading">RAID重建成功概率计算器</h1>
-            <p>该计算器用来计算由于不可恢复的错误导致RAID重建失败的概率. 其他硬盘故障或错误不包含在内.</p>
-            <p>计算假设基于: <a style="font-weight: bold" href="http://www.raidtips.com/raid5-ure.aspx">raid5-ure</a></p>
-            <p>或请搜索关键词 RAID URE .</p>
-            <form id="failchanceform" class="form-horizontal" role="form">
-  <div class="form-group">
-    <label for="raidtype" class="col-sm-3 control-label">RAID 类型</label>
-    <div class="col-sm-9">
-      <select id="raidtype" class="form-control">
+                <div class="inner cover">
+                    <h1 class="cover-heading">RAID重建成功概率计算器</h1>
+                    <p>该计算器用来计算由于不可恢复的错误导致RAID重建失败的概率. 其他硬盘故障或错误不包含在内.</p>
+                    <p>计算假设基于: <a style="font-weight: bold" href="http://www.raidtips.com/raid5-ure.aspx">raid5-ure</a>. RAID6, RAID10理论上不存在URE问题, 只存在重建期间继续掉盘的问题. </p>
+                    <p style="color:#555555">RAID0一时爽, 一直RAID0一直爽【手动滑稽】</p>.
+                    <form id="failchanceform" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="raidtype" class="col-sm-3 control-label">RAID 类型</label>
+                            <div class="col-sm-9">
+                                <select id="raidtype" class="form-control">
         <option>RAID 5</option>
-        <option>RAID 6</option>
       </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="drivesize" class="col-sm-3 control-label">硬盘大小</label>
-    <div class="col-sm-9">
-      <select id="drivesize" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="drivesize" class="col-sm-3 control-label">硬盘大小</label>
+                            <div class="col-sm-9">
+                                <select id="drivesize" class="form-control">
         <option value="72">72 GB</option>
         <option value="146">146 GB</option>
         <option value="300">300 GB</option>
@@ -66,12 +66,12 @@
         <option value="10000">10 TB</option>
         <option value="12000">12 TB</option>
       </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="drivecount" class="col-sm-3 control-label">硬盘数量</label>
-    <div class="col-sm-9">
-      <select id="drivecount" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="drivecount" class="col-sm-3 control-label">硬盘数量</label>
+                            <div class="col-sm-9">
+                                <select id="drivecount" class="form-control">
         <option>3</option>
         <option>4</option>
         <option>5</option>
@@ -93,12 +93,12 @@
         <option>64</option>
         <option>128</option>
       </select>
-    </div>
-  </div>
-    <div class="form-group">
-    <label for="ureaverage" class="col-sm-3 control-label">不可恢复读取错误率 ( Unrecoverable Read Errors Rate )</label>
-    <div class="col-sm-9">
-      <select id="ureaverage" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ureaverage" class="col-sm-3 control-label">不可恢复读取错误率 ( Unrecoverable Read Errors Rate )</label>
+                            <div class="col-sm-9">
+                                <select id="ureaverage" class="form-control">
         <option value="9">10 ^ 9</option>
         <option value="10">10 ^ 10</option>
         <option value="11">10 ^ 11</option>
@@ -109,27 +109,28 @@
         <option value="16">10 ^ 16 (企业级磁盘 或 消费级固态硬盘)</option>
         <option value="17">10 ^ 17 (企业级固态硬盘)</option>
       </select>
-    </div>
-  </div>
-</form>
-          <p class="lead">重建成功概率:</p>
-          <p id="resultspan"></p>
-          </div>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="lead">重建成功概率:</p>
+                    <p id="resultspan"></p>
+                </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Project Translate by <a href="https://github.com/karminski">karminski</a> and original author is <a href="https://github.com/magJ">magJ</a>. View this project on <a href="https://github.com/karminski/raid-failure">GitHub </a></p>
-              <p></p>
-              <p>Background photo by <a href="https://unsplash.com/@0asa">vincent-botta</a> from <a href="https://unsplash.com/photos/wYD_wfifJVs">unsplash.com</a></p>
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>Project Translate by <a href="https://github.com/karminski">karminski</a> and original author is <a href="https://github.com/magJ">magJ</a>. View this project on <a href="https://github.com/karminski/raid-failure">GitHub </a></p>
+                        <p></p>
+                        <p>Background photo by <a href="https://unsplash.com/@0asa">vincent-botta</a> from <a href="https://unsplash.com/photos/wYD_wfifJVs">unsplash.com</a></p>
+                    </div>
+                </div>
+
             </div>
-          </div>
 
         </div>
-
-      </div>
 
     </div>
     <script src="javascripts/jquery.js" type="text/javascript"></script>
     <script src="javascripts/raidcalc.js" type="text/javascript"></script>
-  </body>
+</body>
+
 </html>
