@@ -30,6 +30,7 @@ function checkInput(type, diskCount){
 
 function calculateRaidFailureChance(type, diskCount, disksizeGB, ure){
 	var successChance = 1 - Math.pow(10 , -1 * ure);
+	console.log("successChance: "+successChance);
 	if(type == "RAID 5"){
 		return calculateRaid5FailureChance(diskCount, disksizeGB, successChance);
 	}else if(type == "RAID 6"){

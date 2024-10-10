@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="KCORES RAID 重建成功概率计算器, 用于计算RAID5重建失败的概率. 更多工具欢迎访问 https://kcores.com/tools">
+    <meta name="author" content="karminski">
 
-    <title>RAID重建成功概率计算器</title>
+    <title>KCORES RAID 重建成功概率计算器</title>
 
     <!-- Bootstrap core CSS -->
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -31,10 +31,10 @@
             <div class="cover-container">
 
                 <div class="inner cover">
-                    <h1 class="cover-heading">RAID重建成功概率计算器</h1>
+                    <h1 class="cover-heading">KCORES RAID 重建成功概率计算器</h1>
                     <p>该计算器用来计算由于不可恢复的错误导致RAID重建失败的概率. 其他硬盘故障或错误不包含在内.</p>
                     <p>计算假设基于: <a style="font-weight: bold" href="http://www.raidtips.com/raid5-ure.aspx">raid5-ure</a>. RAID6, RAID10理论上不存在URE问题, 只存在重建期间继续掉盘的问题. </p>
-                    <p style="color:#555555">RAID0一时爽, 一直RAID0一直爽【手动滑稽】</p>.
+                    <p style="color:#555555">本计算器主要为了劝你不要用RAID5. (RAID0一时爽, 一直RAID0一直爽【手动滑稽】)</p>.
                     <form id="failchanceform" class="form-horizontal" role="form">
                         <div class="form-group">
                             <label for="raidtype" class="col-sm-3 control-label">RAID 类型</label>
@@ -50,21 +50,42 @@
                                 <select id="drivesize" class="form-control">
         <option value="72">72 GB</option>
         <option value="146">146 GB</option>
+        <option value="240">240 GB</option>
         <option value="300">300 GB</option>
         <option value="450">450 GB</option>
+        <option value="480">480 GB</option>
         <option value="500">500 GB</option>
         <option value="600">600 GB</option>
         <option value="750">750 GB</option>
+        <option value="960">960 GB</option>
         <option value="1000">1 TB</option>
         <option value="1500">1.5 TB</option>
+        <option value="1600">1.6 TB</option>
+        <option value="1920">1.92 TB</option>
         <option value="2000">2 TB</option>
         <option value="3000">3 TB</option>
-        <option value="4000" selected>4 TB</option>
+        <option value="3200">3.2 TB</option>
+        <option value="3840">3.84 TB</option>
+        <option value="4000">4 TB</option>
         <option value="5000">5 TB</option>
         <option value="6000">6 TB</option>
+        <option value="6400">6.4 TB</option>
+        <option value="7680">7.68 TB</option>
         <option value="8000">8 TB</option>
         <option value="10000">10 TB</option>
         <option value="12000">12 TB</option>
+        <option value="12800">12.8 TB</option>
+        <option value="15360">15.36 TB</option>
+        <option value="16000" selected>16 TB</option>
+        <option value="20000">20 TB</option>
+        <option value="24000">24 TB</option>
+        <option value="30000">30 TB</option>
+        <option value="30720">30.72 TB</option>
+        <option value="32000">32 TB</option>
+        <option value="61440">61.44 TB</option>
+        <option value="64000">64 TB</option>
+        <option value="100000">100 TB</option>
+
       </select>
                             </div>
                         </div>
@@ -118,6 +139,7 @@
 
                 <div class="mastfoot">
                     <div class="inner">
+                        <p>更多工具: <a href="https://kcores.com/tools">https://kcores.com/tools</a></p>
                         <p>Project Translate by <a href="https://github.com/karminski">karminski</a> and original author is <a href="https://github.com/magJ">magJ</a>. View this project on <a href="https://github.com/karminski/raid-failure">GitHub </a></p>
                         <p></p>
                         <p>Background photo by <a href="https://unsplash.com/@0asa">vincent-botta</a> from <a href="https://unsplash.com/photos/wYD_wfifJVs">unsplash.com</a></p>
